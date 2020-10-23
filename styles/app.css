@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+:root {
+  --color-primary: #eb8258;
+  --color-white: #ffffff;
+  --color-light: #f7f9fb;
+  --color-black: #404649;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--color-light);
+  color: var(--color-black);
+  font: 400 10px/1.5 'Source Sans Pro', serif;
+}
+
+body {
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+
+p {
+  margin: 0 0 1.5rem;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: .75;
+}
+
+
+/**
+  Footer
+ */
+
+footer.footer {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 2rem;
+}
+
+
+/**
+  Header
+ */
+
+header.header {
+  background: var(--color-white);
+  padding: 2rem 2rem 0;
+}
+
+header.header .title {
+  margin: 0;
+}
+
+
+/**
+  Header navigation
+ */
+
+header.header nav.nav ul {
+  display: block;
+  margin: 0 -1rem;
+}
+
+header.header nav.nav ul li {
+  display: inline-block;
+}
+
+header.header nav.nav ul li .router-link {
+  display: block;
+  padding: 1rem;
+}
+
+header.header nav.nav ul li .router-link.router-link-active {
+  border-bottom: .2rem solid var(--color-primary);
+  padding-bottom: .8rem;
+}
+
+
+/**
+  Main
+ */
+
+main.main {
+  padding: 2rem;
+}
+
+
+/**
+	Ensure footer always stays at the bottom
+ */
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer,
+.header,
+.main {
+  flex-shrink: 0;
+}
+
+.main {
+  flex-grow: 1;
+}
