@@ -37,12 +37,14 @@ Here you can edit the overall app layout and add/remove navigation links.
 The navigation links have to have CSS class <code>'router-link'</code> in
 order for the router to function.
 
+For example, the link to 'about' route is:
+
 <pre>
 &lt;nav class="nav">
   &lt;ul>
-    &lt;li>&lt;a class="router-link" href="">Welcome&lt;/a>&lt;/li>
+    ...
     &lt;li>&lt;a class="router-link" href="about">About&lt;/a>&lt;/li>
-    &lt;li>&lt;a class="router-link" href="contact">Contact&lt;/a>&lt;/li>
+    ...
   &lt;/ul>
 &lt;/nav>
 </pre>
@@ -56,12 +58,42 @@ with <code>id="root"</code>:
 </pre>
 
 
+### Page templates
+
+<strong>scripts/templates/</strong>
+
+Page templates can be modified or added here, then imported into
+<code>scripts/modules/router.js</code>. 
+
+For example, the 'about' page template in <code>scripts/templates/about.js</code>
+currently contains:
+
+<pre>
+export default class About {
+  static get template() {
+    return `
+  &lt;h2 class="title">About&lt;/h2>
+  ...
+  `;
+  }
+}
+</pre>
+
+It is imported in <code>scripts/modules/router.js</code>:
+
+<pre>
+import About from '../templates/about.js';
+</pre>
+
+
 ### Router
 
 <strong>scripts/modules/router.js</strong>
 
 The majority of the router logic is located here. You can specify new routes
-and their corresponding templates in the <code>routes</code> array:
+and their corresponding templates in the <code>routes</code> array.
+
+For example, the route 'about' is specified as follows:
 
 <pre>
 static routes = [
@@ -75,13 +107,5 @@ static routes = [
 ];
 </pre>
 
-Router link click and browser history back/forward button click handlers
-are here as well.
-
-
-### Page templates
-
-<strong>scripts/templates/</strong>
-
-New page templates can be added here, then imported into <code>router.js</code>. 
-See any of the existing template files for an example.
+(Router link click and browser history back/forward button click handlers
+are here as well.)
