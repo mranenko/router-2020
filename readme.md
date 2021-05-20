@@ -3,7 +3,7 @@
 
 # Vanilla JS Router
 
-This is an example of a simple router in plain JavaScript.
+Example of a simple router in JavaScript.
 
 
 ## How to run
@@ -63,7 +63,7 @@ with <code>id="root"</code>:
 <strong>scripts/templates/</strong>
 
 Page templates can be modified or added here, then imported into
-<code>scripts/modules/router.js</code>. 
+<code>scripts/modules/router.js</code>.
 
 For example, the 'about' page template in <code>scripts/templates/about.js</code>
 currently contains:
@@ -79,7 +79,7 @@ export default class About {
 }
 </pre>
 
-It is imported in <code>scripts/modules/router.js</code>:
+It is then imported in <code>scripts/modules/router.js</code>:
 
 <pre>
 import About from '../templates/about.js';
